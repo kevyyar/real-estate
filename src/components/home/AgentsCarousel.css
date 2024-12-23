@@ -1,0 +1,80 @@
+.agents-carousel .slick-prev,
+.agents-carousel .slick-next {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.agents-carousel .slick-prev:hover,
+.agents-carousel .slick-next:hover {
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: scale(1.1);
+}
+
+.agents-carousel .slick-prev {
+  left: -20px;
+}
+
+.agents-carousel .slick-next {
+  right: -20px;
+}
+
+.agents-carousel .slick-prev:before,
+.agents-carousel .slick-next:before {
+  color: #3b82f6;
+  font-size: 24px;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.agents-carousel .slick-dots {
+  bottom: -40px;
+}
+
+.agents-carousel .slick-dots li button:before {
+  font-size: 10px;
+  color: #3b82f6;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.agents-carousel .slick-dots li.slick-active button:before {
+  opacity: 1;
+}
+
+/* Animation for slides */
+.agents-carousel .slick-slide {
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  transform: scale(0.95);
+  height: auto !important; /* Force consistent height */
+}
+
+.agents-carousel .slick-slide > div {
+  height: 100%;
+}
+
+.agents-carousel .slick-slide.slick-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Smooth transition between slides */
+.agents-carousel .slick-track {
+  display: flex !important;
+  transition: all 0.5s ease;
+}
+
+/* Ensure all slides have the same height */
+.agents-carousel .slick-slide > div {
+  height: 100%;
+}
+
+.agents-carousel .slick-slide > div > div {
+  height: 100%;
+}
