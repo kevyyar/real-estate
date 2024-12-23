@@ -1,4 +1,5 @@
 import { FaBath, FaBed, FaRuler } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { Property } from "../../types/property";
 import { formatCurrency } from "../../utils/format";
 
@@ -8,6 +9,7 @@ interface PropertyCardProps {
 
 const PropertyCard = ({ property }: PropertyCardProps) => {
   const {
+    id,
     imageUrl,
     title,
     status,
@@ -21,7 +23,10 @@ const PropertyCard = ({ property }: PropertyCardProps) => {
   } = property;
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1">
+    <Link
+      to={`/properties/${id}`}
+      className="block bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg"
+    >
       {/* Image Container */}
       <div className="relative h-64">
         <img
@@ -73,7 +78,6 @@ const PropertyCard = ({ property }: PropertyCardProps) => {
               <FaBed className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600" />
             </div>
             <div className="flex flex-col">
-              {/* <span className="text-xs sm:text-sm text-gray-500">Beds</span> */}
               <span className="text-xs font-medium text-gray-900">
                 {bedrooms}
               </span>
@@ -84,8 +88,7 @@ const PropertyCard = ({ property }: PropertyCardProps) => {
             <div className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-50">
               <FaBath className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600" />
             </div>
-            <div className="flex flex-col ">
-              {/* <span className="text-xs sm:text-sm text-gray-500">Baths</span> */}
+            <div className="flex flex-col">
               <span className="text-xs font-medium text-gray-900">
                 {bathrooms}
               </span>
@@ -97,7 +100,6 @@ const PropertyCard = ({ property }: PropertyCardProps) => {
               <FaRuler className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-600" />
             </div>
             <div className="flex flex-col">
-              {/* <span className="text-xs sm:text-sm text-gray-500">Area</span> */}
               <span className="text-xs font-medium text-gray-900">
                 {area} sqft
               </span>
@@ -105,7 +107,7 @@ const PropertyCard = ({ property }: PropertyCardProps) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
