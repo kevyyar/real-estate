@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "../components/layout/RootLayout";
+import Agents from "../pages/Agents";
 import Home from "../pages/Home";
 import Properties from "../pages/Properties";
 
@@ -19,7 +20,11 @@ const router = createBrowserRouter([
       },
       {
         path: "agents",
-        element: <div className="p-8">Agents Page (Coming Soon)</div>,
+        element: (
+          <div className="p-8">
+            <Agents />
+          </div>
+        ),
       },
       {
         path: "contact",
